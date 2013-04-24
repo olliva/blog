@@ -49,7 +49,7 @@
     }
     .row{
         min-width: 0;
-        padding: 0 20px;
+        padding: 0 30px;
     }
     .columns{
         padding: 0;
@@ -65,14 +65,17 @@
         background-color: black;
     }
     .header .logo{
-        color: white;
         font-size: 20px;
         font-weight: bold;
         padding: 30px 0;
     }
+    .header .logo a{
+        color: white;
+    }
     .header .menuItem {
         text-align: right;
         padding: 34px 0;
+        margin-right: 20px;
     }
     .header .headerNavigation .menuItem a {
         font-size: 12px;
@@ -427,9 +430,11 @@
     <div class="header">
         <div class="row">
             <div class="two columns logo">
-                Classic
+                <a href="#">
+                    Classic
+                </a>
             </div>
-            <div class="ten columns headerNavigation">
+            <div class="seven columns ended headerNavigation">
                 <div class="menuItem">
                     <a href=""><img src="home.png"></a>
                     <a href="">NEWS</a>
