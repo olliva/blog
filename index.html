@@ -15,7 +15,6 @@
     }
     body {
         margin: 0;
-        min-width: 940px;
     }
     p{
         margin-top: 27px;
@@ -77,6 +76,19 @@
         text-align: right;
         padding: 34px 0;
         margin-right: 20px;
+    }
+    .header .menuItem a:first-child{
+        width: 13px;
+        height: 12px;
+        position: relative;
+
+    }
+    .header .menuItem .homeMenuItem{
+        width: 13px;
+        height: 12px;
+        background: url('home.png');
+        top: 1px;
+        position: absolute;
     }
     .header .headerNavigation .menuItem a {
         font-size: 12px;
@@ -386,6 +398,9 @@
         .header .headerNavigation .menuItem a{
             padding-top: 30px;
         }
+        .header .menuItem .homeMenuItem{
+            top: 18px;
+        }
         .header .logo{
             padding-bottom: 0;
         }
@@ -407,6 +422,9 @@
         .bottomSocialNetworksContainer .bottomCopyright{
             text-align: center;
         }
+        .bottomSocialNetworksContainer .bottomMenu a{
+            margin: 0 15px 25px 15px;
+        }
 
         
     }
@@ -414,6 +432,15 @@
 
 
     </style>
+
+    <!--[if gte IE 8]>
+        <style>
+            body{
+                min-width: 940px;
+            }
+
+        </style>
+    <![endif]-->
 
     <body>
         <script type="text/javascript">
@@ -440,7 +467,9 @@
             </div>
             <div class="ten columns headerNavigation">
                 <div class="menuItem">
-                    <a href=""><img src="home.png"></a>
+                    <a href="">
+                        <div class="homeMenuItem"></div>
+                    </a>
                     <a href="">NEWS</a>
                     <a href="">TUTORIALS</a>
                     <a href="">INSPIRATION</a>
