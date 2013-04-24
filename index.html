@@ -153,17 +153,22 @@
         font-size: 13px;
         font-weight: bold;
     }
+    .socialNetworksContainer .counterContainer .socialIconContainer{
+        position: absolute;
+        left: 0;
+        top: -6px;
+    }
     .contentPart .socialNetworksContainer{
         border-bottom: 1px solid #e0e0e0;
         padding-bottom: 45px;
-    }
-    .contentPart .socialNetworksContainer{
         text-align: center;
         margin-top: 30px;
     }
     .contentPart .socialNetworksContainer .counterContainer{
         display: inline-block;
         margin-top: 10px;
+        position: relative;
+        padding-left: 25px;
     }
     .contentPart .socialNetworksContainer .shareCounter{
         display: inline-block;
@@ -302,6 +307,14 @@
     .socialNetworksContainer .counterContainer{
         display: inline-block;
         margin-top: 10px;
+        position: relative;
+        padding-left: 25px;
+
+    }
+    .socialNetworksContainer .counterContainer .socialIconContainer{
+        position: absolute;
+        left: 0;
+        top: -6px;
     }
     .socialNetworksContainer .shareCounter{
         display: inline-block;
@@ -479,21 +492,27 @@
                 </div>
                 <div class="socialNetworksContainer">
                     <div class="counterContainer">
-                        <a href="">
-                            <img src="twitterCounter.png">
-                        </a>
+                        <div class="socialIconContainer">
+                            <a href="">
+                                <img src="twitterCounter.png">
+                            </a>
+                        </div>
                         <div class="shareCounter twitterCounter">1250</div>
                     </div>
                     <div class="counterContainer">
-                        <a href="">
-                            <img src="facebookCounter.png">
-                        </a>
+                        <div class="socialIconContainer">
+                            <a href="">
+                                <img src="facebookCounter.png">
+                            </a>
+                        </div>
                         <div class="shareCounter facebookCounter">100</div>
                     </div>
                     <div class="counterContainer">
-                        <a href="">
-                            <img src="pCounter.png">
-                        </a>
+                        <div class="socialIconContainer">
+                            <a href="">
+                                <img src="pCounter.png">
+                            </a>
+                        </div>
                         <div class="shareCounter pCounter">328</div>
                     </div>
                     </div>
