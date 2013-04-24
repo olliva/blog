@@ -70,8 +70,8 @@
         font-weight: bold;
         padding: 30px 0;
     }
-    .menuItem {
-        float: right;
+    .header .menuItem {
+        text-align: right;
         padding: 34px 0;
     }
     .header .headerNavigation .menuItem a {
@@ -98,15 +98,22 @@
     .secondHeader .row{
         padding: 0;
     }
-    .secondHeader .menuItem{
-        padding: 21px 80px 0 0;
-    }
     .secondHeader ul{
         list-style-type: none;
+        padding: 0;
+        margin: 0;
+        padding-right: 80px;
+        text-align: right;
     }
     .secondHeader ul li{
         display: inline-block;
         margin: 0 15px;
+        border-bottom: 1px solid transparent;
+        padding: 17px 5px;
+         margin-bottom: -1px;
+    }
+    .secondHeader ul li:hover{
+        border-color: #636363;
     }
     .secondHeader  a{
         color: #555555;
@@ -114,6 +121,7 @@
         font-weight: normal;
         padding-bottom: 20px;
     }
+
 
 
 
@@ -352,9 +360,8 @@
             text-align: center;
         }
         .menuItem {
-            float: none;
-            padding-top: 0;
             text-align: center;
+            padding-top: 0;
         }
         .header .headerNavigation .menuItem a{
             padding-top: 30px;
@@ -369,9 +376,8 @@
         .secondHeader ul li{
             margin-bottom: -1px;
             padding: 17px 5px;
-            border-bottom: 1px solid transparent;
             display: inline-block;
-            border-bottom: 1px solid #636363;
+
         }
 
 
