@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blog</title>
+    <link rel="stylesheet" type="text/css" href="foundation.css">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <script src="jquery.js"></script>
+</head>
+<style>
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        font-family: "MenschRegular", "helvetica", arial, sans-serif;
+    }
+    body {
+        margin: 0;
+    }
+    p{
+        margin-top: 27px;
+        font-size: 15px;
+        line-height: 24px;
+        color: black;
+        font-weight: lighter;
+    }
+    img{
+        border: 0;
+    }
+    a{
+        text-decoration: none;
+    }
+    a:hover{
+        cursor: pointer;
+    }
+    ul[type="none"] {
+        margin: 0;
+        padding: 0;
+    }
+    textarea,
+    input[type="text"]{
+        border-radius: 5px;
+        border-color: #d8d8d8;
+    }
+    input:focus{
+        outline: none;
+    }
+    textarea:focus{
+        outline: none;
+    }
+    .row{
+        min-width: 0;
+        padding: 0 20px;
+    }
+    .columns{
+        padding: 0;
+    }
+    .picture img{
+        width: 100%;
+    }
+
+
+
+
+    .header{
+        background-color: black;
+    }
+    .header .logo{
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        padding: 30px 0;
+    }
+    .menuItem {
+        float: right;
+        padding: 34px 0;
+    }
+    .header .headerNavigation .menuItem a {
+        font-size: 12px;
+        font-weight: bold;
+        color: #cccccc;
+        margin: 0 15px;
+        display: inline-block;
+    }
+    .header .headerNavigation .menuItem a:hover {
+        color: white;
+    }
+    .header .headerNavigation .menuItem a img{
+        width: 12px;
+    }
+
+
+
+
+    .secondHeader{
+        background-color: #f8f8f8;
+        border-bottom: 1px solid #d4d4d4;
+    }
+    .secondHeader .row{
+        padding: 0;
+    }
+    .secondHeader .menuItem{
+        padding: 21px 80px 0 0;
+    }
+    .secondHeader ul{
+        list-style-type: none;
+    }
+    .secondHeader ul li{
+        display: inline-block;
+        margin: 0 15px;
+    }
+    .secondHeader  a{
+        color: #555555;
+        font-size: 13px;
+        font-weight: normal;
+        padding-bottom: 20px;
+    }
+
+
+
+    .contentPart .contentHeader{
+        text-align: center;
+        margin-top: 80px;
+        line-height: 55px;
+        font-size: 40px;
+        font-weight: bold;
+    }
+    .contentPart .contentDate{
+        text-align: center;
+        font-size: 12px;
+        padding-top: 20px;
+        color: #555555;
+    }
+    .contentPart .contentImage{
+        text-align: center;
+        margin-top: 63px;
+        padding-bottom: 20px;
+    }
+    .contentPart .smallContentHeader{
+        font-size: 25px;
+        padding-top: 20px;
+    }
+    .contentPart .shareArticle{
+        text-align: center;
+        padding-top: 60px;
+        font-size: 13px;
+        font-weight: bold;
+    }
+    .contentPart .socialNetworksContainer{
+        border-bottom: 1px solid #e0e0e0;
+        padding-bottom: 45px;
+    }
+    .contentPart .socialNetworksContainer{
+        text-align: center;
+        margin-top: 30px;
+    }
+    .contentPart .socialNetworksContainer .counterContainer{
+        display: inline-block;
+        margin-top: 10px;
+    }
+    .contentPart .socialNetworksContainer .shareCounter{
+        display: inline-block;
+        background-color: black;
+        border-radius: 3px;
+        /* add in vendor rules */
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+        /* add in vendor rules */
+        font-weight: bold;
+        padding: 3px 10px;
+        position: relative;
+        text-align: center;
+        min-width: 40px;
+        margin-bottom: 0;
+        vertical-align: middle;
+        color: white;
+        top: -7px;
+        margin-right: 15px;
+        margin-left: 5px;
+    }
+    .contentPart .socialNetworksContainer .shareCounter:before{
+        content: url("counterArrow.png");
+        position: absolute;
+        left: -7px;
+        top: 2px;
+    }
+
+
+
+
+
+    .commentsPart .commentsHeader{
+        font-weight: bold;
+        font-size: 25px;
+        padding-top: 50px;
+        margin-bottom: 25px;
+    }
+    .commentsPart .commentContainer{
+        margin-top: 20px;
+    }
+    .commentsPart .commentContainer .userAvatarContainer{
+        float: left;
+        width: 10%;
+        padding-right: 10px;
+    }
+    .commentsPart .secondCommentContainer .userAvatarContainer{
+        margin-left: 10%;
+    }
+    .commentsPart .commentContainer .userAvatarContainer .userAvatar img{
+        width: 100%;
+    }
+    .commentsPart .commentContainer .commentContentContainer{
+        float: right;
+        width: 90%;
+    }
+    .commentsPart .secondCommentContainer .commentContentContainer{
+        width: 80%;
+    }
+    .commentsPart .commentContainer .commentContentContainer .userName{
+        font-size: 17px;
+        font-weight: bold;
+    }
+    .commentsPart .commentContainer .commentContentContainer .commentData {
+        font-size: 11px;
+        padding-top: 20px;
+        color: #656565;
+        font-weight: bold;
+    }
+    .commentsPart .commentContainer .commentContentContainer .commentContent p {
+        padding: 0;
+        color: #111111;
+        margin-top: 20px;
+    }
+    .commentsPart .commentContainer .commentContentContainer .clickToReply a {
+        color: #555555;
+        font-size: 12px;
+    }
+    .commentsPart .commentContainer .commentContentContainer .clickToReply a:hover{
+        color: #302f2f;
+    }
+
+
+
+
+    .commentsPart .leaveACommentField .fieldName{
+        margin-top: 20px;
+        font-size: 14px;
+        margin-bottom: 12px;
+        font-weight: bold;
+    }
+
+
+
+    .bottomSocialNetworksContainer{
+        margin-top: 85px;
+        border-top: 1px solid #999999;
+    }
+    .bottomSocialNetworksContainer .bottomMenu {
+        font-size: 12px;
+    }
+    .bottomSocialNetworksContainer .bottomMenu a{
+        margin: 25px 0;
+        margin-right: 30px;
+        color: #555555;
+        display: inline-block;
+    }
+    .bottomSocialNetworksContainer .bottomMenu a:hover{
+        color: #302f2f;
+    }
+    .bottomSocialNetworksContainer .bottomIcons {
+        padding: 10px 0;
+        text-align: center;
+    }
+    .bottomSocialNetworksContainer .bottomCopyright {
+        margin: 25px 0;
+        font-size: 12px;
+        color: #555555;
+        text-align: right;
+    }
+    .bottomSocialNetworksContainer .bottomCopyright a{
+        font-size: 12px;
+        color: #555555;
+    }
+    .bottomSocialNetworksContainer .bottomCopyright a:hover{
+        color: #302f2f;
+    }
+
+
+
+
+
+    .socialNetworksContainer{
+        text-align: center;
+        margin-top: 30px;
+    }
+    .socialNetworksContainer .counterContainer{
+        display: inline-block;
+        margin-top: 10px;
+    }
+    .socialNetworksContainer .shareCounter{
+        display: inline-block;
+        background-color: black;
+        border-radius: 3px;
+        /* add in vendor rules */
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+        /* add in vendor rules */
+        font-weight: bold;
+        padding: 3px 10px;
+        position: relative;
+        text-align: center;
+        min-width: 40px;
+        margin-bottom: 0;
+        vertical-align: middle;
+        color: white;
+        top: -7px;
+        margin-right: 15px;
+        margin-left: 5px;
+    }
+    .socialNetworksContainer .shareCounter:before{
+        content: url("counterArrow.png");
+        position: absolute;
+        left: -7px;
+        top: 2px;
+    }
+
+
+
+    @-moz-document url-prefix(){
+        .socialNetworksContainer .shareCounter{
+            height: 18px;
+        }
+        .secondHeader .menuItem a{
+            padding-bottom: 22px;
+        }
+
+    }
+
+
+    @media only screen and (max-width: 890px){
+        .bottomSocialNetworksContainer .bottomMenu {
+            text-align: center;
+            margin-top: 25px;
+        }
+        .bottomSocialNetworksContainer .bottomMenu a{
+            margin: 0 30px 25px 0;
+
+        }
+
+    }
+
+
+    @media only screen and (max-width: 767px){
+        .header{
+            text-align: center;
+        }
+        .menuItem {
+            float: none;
+            padding-top: 0;
+            text-align: center;
+        }
+        .header .headerNavigation .menuItem a{
+            padding-top: 30px;
+        }
+        .header .logo{
+            padding-bottom: 0;
+        }
+        .secondHeader ul.menuItem{
+            padding: 0;
+            margin: 0;
+        }
+        .secondHeader ul li{
+            margin-bottom: -1px;
+            padding: 17px 5px;
+            border-bottom: 1px solid transparent;
+            display: inline-block;
+            border-bottom: 1px solid #636363;
+        }
+
+
+        .bottomSocialNetworksContainer .bottomCopyright{
+            text-align: center;
+        }
+
+        
+    }
+
+
+
+    </style>
+
+    <body>
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $('.commentContainer').each(function(){
+                var commentContairHeight = $('.commentContentContainer').height();
+                $(this).css({'height' : commentContairHeight + "px"});
+            })
+            $(window).resize(function(){
+                $('.commentContainer').each(function(){
+                    var commentContairHeight = $('.commentContentContainer').height();
+                    $(this).css({'height' : commentContairHeight + "px"});
+                })
+            })
+        });
+
+        </script>
+    <div class="header">
+        <div class="row">
+            <div class="two columns logo">
+                Classic
+            </div>
+            <div class="ten columns headerNavigation">
+                <div class="menuItem">
+                    <a href=""><img src="home.png"></a>
+                    <a href="">NEWS</a>
+                    <a href="">TUTORIALS</a>
+                    <a href="">INSPIRATION</a>
+                    <a href="">WORDPRESS</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="secondHeader">
+        <div class="row">
+            <div class="twelve columns">
+                <ul class="menuItem">
+                    <li><a href="#">Business</a></li>
+                    <li><a href="#">Mobile</a></li>
+                    <li><a href="#">Social Media</a></li>
+                    <li><a href="#">Technology</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="contentPart">
+        <div class="row">
+            <div class="twelve columns">
+                <div class="contentHeader">
+                    Year in Review: Our Favourite Apps 
+                    <br>
+                    from 2012
+                </div>
+                <div class="contentDate">
+                    Posted on March 3, 2013
+                </div>
+                <div class="contentImage">
+                    <img src="placeImageHere.png"/>
+                </div>
+                <div class="contentContent">
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.</p>
+                    <p> Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+                    <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+                </div>
+                <div class="contentImage">
+                    <img src="smallPlaceImageHere.png">
+                </div>
+                <div class="smallContentHeader">
+                    Features of Wunderlist
+                </div>
+                <div class="contentContent">
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
+                    <p> Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+                </div>
+                <div class="contentImage">
+                    <img src="middlePlaceImageHere.png">
+                </div>
+                <div class="contentContent">
+                    <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+                </div>
+                <div class="shareArticle">
+                    Share this article...
+                </div>
+                <div class="socialNetworksContainer">
+                    <div class="counterContainer">
+                        <a href="">
+                            <img src="twitterCounter.png">
+                        </a>
+                        <div class="shareCounter twitterCounter">1250</div>
+                    </div>
+                    <div class="counterContainer">
+                        <a href="">
+                            <img src="facebookCounter.png">
+                        </a>
+                        <div class="shareCounter facebookCounter">100</div>
+                    </div>
+                    <div class="counterContainer">
+                        <a href="">
+                            <img src="pCounter.png">
+                        </a>
+                        <div class="shareCounter pCounter">328</div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="commentsPart">
+        <div class="row">
+            <div class="twelve columns">
+                <div class="commentsHeader">
+                    Comments
+                </div>
+                <div class="commentContainer">
+                    <div class="userAvatarContainer">
+                        <div class="userAvatar">
+                            <img src="firstUserAvatar.png"/>
+                        </div>
+                    </div>
+                    <div class="commentContentContainer">
+                        <div class="userName">
+                            Uku Mason
+                        </div>
+                        <div class="commentData">
+                            March 2, 2013 - 12:50 AM
+                        </div>
+                        <div class="commentContent">
+                            <p>I absolutely love the Wunderlist from 6Wunderkinder!! It keeps me organized and makes my life easier. I’m looking to get a HTC phone and wanted to know whether they have an Adroid version out yet?</p>    
+                        </div>
+                        <div class="clickToReply">
+                            <a href="">
+                                <img src="clickToReply.png">
+                                Click to Reply
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="commentContainer secondCommentContainer">
+                    <div class="userAvatarContainer">
+                        <div class="userAvatar">
+                            <img src="secondUserAvatar.png"/>
+                        </div>
+                    </div>
+                    <div class="commentContentContainer">
+                        <div class="userName">
+                            Designer First
+                        </div>
+                        <div class="commentData">
+                            March 2, 2013 - 4:00 AM
+                        </div>
+                        <div class="commentContent">
+                            <p>I believe they recently released an Android version. You should check out the 6Wunderkinder page. I remember seeing it there.</p>    
+                        </div>
+                        <div class="clickToReply">
+                            <a href="">
+                                <img src="clickToReply.png">
+                                Click to Reply
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="commentContainer">
+                    <div class="userAvatarContainer">
+                        <div class="userAvatar">
+                            <img src="firstUserAvatar.png"/>
+                        </div>
+                    </div>
+                    <div class="commentContentContainer">
+                        <div class="userName">
+                            Ro Kanth
+                        </div>
+                        <div class="commentData">
+                            March 28, 2013 - 3:28 PM
+                        </div>
+                        <div class="commentContent">
+                            <p>This is the greatest app ever! So simple and so beautiful!! I’m so glad that they have cloud sync for this app, makes it easy manage tasks over multiple devices.</p>    
+                        </div>
+                        <div class="clickToReply">
+                            <a href="">
+                                <img src="clickToReply.png">
+                                Click to Reply
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                    <div class="commentsHeader">
+                        Leave a Comment
+                    </div>
+                <div class="leaveACommentField">
+                    <div class="fieldName">
+                        Name<sup>*</sup>
+                    </div>
+                    <div class="row">
+                        <div class="four columns">
+                            <input type="text"/>
+                        </div>
+                    </div>
+                    <div class="fieldName">
+                        Email<sup>*</sup>
+                    </div>
+                    <div class="row">
+                        <div class="four columns">
+                            <input type="text"/>
+                        </div>
+                    </div>
+                    <div class="fieldName">
+                        Your Comment<sup>*</sup>
+                    </div>
+                    <div class="row">
+                        <div class="eight columns">
+                            <textarea rows='15'></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="bottomSocialNetworksContainer">
+            <div class="four columns bottomMenu">
+                <a href="">Home</a>
+                <a href="">About</a>
+                <a href="">Archive</a>
+                <a href="">Contact</a>
+            </div>
+            <div class="four columns bottomIcons">
+                <a href=""><img src="twitter.png"></a>
+                <a href=""><img src="facebook.png"></a>
+                <a href=""><img src="p.png"></a>
+                <a href=""><img src="google.png"></a>
+            </div>
+            <div class="four columns bottomCopyright">
+                © Copyright 2013 <a href="">DesignerFirst.com</a>
+            </div>
+        </div>
+    </div>
+    </body>
