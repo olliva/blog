@@ -1,0 +1,430 @@
+* {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        font-family: "MenschRegular", "helvetica", arial, sans-serif;
+    }
+    body {
+        margin: 0;
+    }
+    p{
+        margin-top: 27px;
+        font-size: 15px;
+        line-height: 24px;
+        color: black;
+        font-weight: lighter;
+    }
+    img{
+        border: 0;
+    }
+    a{
+        text-decoration: none;
+    }
+    a:hover{
+        cursor: pointer;
+    }
+    ul[type="none"] {
+        margin: 0;
+        padding: 0;
+    }
+    textarea,
+    input[type="text"]{
+        border-radius: 5px;
+        border-color: #d8d8d8;
+    }
+    input:focus{
+        outline: none;
+    }
+    textarea:focus{
+        outline: none;
+    }
+    .row{
+        min-width: 0;
+        padding: 0 30px;
+    }
+    .columns{
+        padding: 0;
+    }
+    .picture img{
+        width: 100%;
+    }
+
+
+
+
+    .header{
+        background-color: black;
+    }
+    .header .logo{
+        font-size: 20px;
+        font-weight: bold;
+        padding: 30px 0;
+    }
+    .header .logo a{
+        color: white;
+    }
+    .header .menuItem {
+        text-align: right;
+        padding: 34px 0;
+        margin-right: 20px;
+    }
+    .header .menuItem a:first-child{
+        width: 13px;
+        height: 12px;
+        position: relative;
+
+    }
+    .header .menuItem .homeMenuItem{
+        width: 13px;
+        height: 12px;
+        background: url('img/homeIcons.png');
+        background-position: 0 0;
+        top: 1px;
+        position: absolute;
+    }
+    .header .menuItem .homeMenuItem:hover{
+        background: url('img/homeIcons.png');
+        background-position: 0 -22px;
+    }
+    .header .headerNavigation .menuItem a {
+        font-size: 12px;
+        font-weight: bold;
+        color: #cccccc;
+        margin: 0 15px;
+        display: inline-block;
+    }
+    .header .headerNavigation .menuItem a:hover {
+        color: white;
+    }
+    .header .headerNavigation .menuItem a img{
+        width: 12px;
+    }
+
+
+
+
+    .secondHeader{
+        background-color: #f8f8f8;
+        border-bottom: 1px solid #d4d4d4;
+    }
+
+    .secondHeader ul{
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        margin-right: 20px;
+  
+        text-align: right;
+    }
+    .secondHeader ul li{
+        display: inline-block;
+        margin: 0 15px;
+        border-bottom: 1px solid transparent;
+        padding: 17px 5px;
+         margin-bottom: -1px;
+    }
+    .secondHeader ul li:hover{
+        border-color: #636363;
+    }
+    .secondHeader ul li:hover a{
+        color: black;
+    }
+    .secondHeader  a{
+        color: #555555;
+        font-size: 13px;
+        font-weight: normal;
+        padding-bottom: 20px;
+    }
+
+
+
+
+    .contentPart .contentHeader{
+        text-align: center;
+        margin-top: 80px;
+        line-height: 55px;
+        font-size: 40px;
+        font-weight: bold;
+    }
+    .contentPart .contentDate{
+        text-align: center;
+        font-size: 12px;
+        padding-top: 20px;
+        color: #555555;
+    }
+    .contentPart .contentImage{
+        text-align: center;
+        margin-top: 63px;
+        padding-bottom: 20px;
+    }
+    .contentPart .smallContentHeader{
+        font-size: 25px;
+        padding-top: 20px;
+    }
+    .contentPart .shareArticle{
+        text-align: center;
+        padding-top: 60px;
+        font-size: 13px;
+        font-weight: bold;
+    }
+    .socialNetworksContainer .counterContainer .socialIconContainer{
+        position: absolute;
+        left: 0;
+        top: -6px;
+    }
+    .contentPart .socialNetworksContainer{
+        border-bottom: 1px solid #e0e0e0;
+        padding-bottom: 45px;
+        text-align: center;
+        margin-top: 30px;
+    }
+    .contentPart .socialNetworksContainer .counterContainer{
+        display: inline-block;
+        margin-top: 10px;
+        position: relative;
+        padding-left: 25px;
+    }
+    .contentPart .socialNetworksContainer .shareCounter{
+        display: inline-block;
+        background-color: black;
+        border-radius: 3px;
+        /* add in vendor rules */
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+        /* add in vendor rules */
+        font-weight: bold;
+        padding: 3px 10px;
+        position: relative;
+        text-align: center;
+        min-width: 40px;
+        margin-bottom: 0;
+        vertical-align: middle;
+        color: white;
+        top: -7px;
+        margin-right: 15px;
+        margin-left: 5px;
+    }
+    .contentPart .socialNetworksContainer .shareCounter:before{
+        content: url("img/counterArrow.png");
+        position: absolute;
+        left: -7px;
+        top: 2px;
+    }
+
+
+
+
+
+    .commentsPart .commentsHeader{
+        font-weight: bold;
+        font-size: 25px;
+        padding-top: 50px;
+        margin-bottom: 25px;
+    }
+    .commentsPart .commentContainer{
+        margin-top: 20px;
+        overflow: auto;
+    }
+    .commentsPart .commentContainer .userAvatarContainer{
+        float: left;
+        width: 10%;
+        padding-right: 10px;
+    }
+    .commentsPart .secondCommentContainer .userAvatarContainer{
+        margin-left: 10%;
+    }
+    .commentsPart .commentContainer .userAvatarContainer .userAvatar img{
+        width: 100%;
+    }
+    .commentsPart .commentContainer .commentContentContainer{
+        float: right;
+        width: 90%;
+    }
+    .commentsPart .secondCommentContainer .commentContentContainer{
+        width: 80%;
+    }
+    .commentsPart .commentContainer .commentContentContainer .userName{
+        font-size: 17px;
+        font-weight: bold;
+    }
+    .commentsPart .commentContainer .commentContentContainer .commentData {
+        font-size: 11px;
+        padding-top: 20px;
+        color: #656565;
+        font-weight: bold;
+    }
+    .commentsPart .commentContainer .commentContentContainer .commentContent p {
+        padding: 0;
+        color: #111111;
+        margin-top: 20px;
+    }
+    .commentsPart .commentContainer .commentContentContainer .clickToReply a {
+        color: #555555;
+        font-size: 12px;
+    }
+    .commentsPart .commentContainer .commentContentContainer .clickToReply a:hover{
+        color: #302f2f;
+    }
+
+
+
+
+    .commentsPart .leaveACommentField .fieldName{
+        margin-top: 20px;
+        font-size: 14px;
+        margin-bottom: 12px;
+        font-weight: bold;
+    }
+    .commentsPart .leaveACommentField .row{
+        padding: 0;
+        margin: 0;
+    }
+
+
+
+    .bottomSocialNetworksContainer{
+        margin-top: 85px;
+        border-top: 1px solid #999999;
+    }
+    .bottomSocialNetworksContainer .bottomMenu {
+        font-size: 12px;
+    }
+    .bottomSocialNetworksContainer .bottomMenu a{
+        margin: 25px 0;
+        margin-right: 30px;
+        color: #555555;
+        display: inline-block;
+    }
+    .bottomSocialNetworksContainer .bottomMenu a:hover{
+        color: #302f2f;
+    }
+    .bottomSocialNetworksContainer .bottomIcons {
+        padding: 10px 0;
+        text-align: center;
+    }
+    .bottomSocialNetworksContainer .bottomCopyright {
+        margin: 25px 0;
+        font-size: 12px;
+        color: #555555;
+        text-align: right;
+    }
+    .bottomSocialNetworksContainer .bottomCopyright a{
+        font-size: 12px;
+        color: #555555;
+    }
+    .bottomSocialNetworksContainer .bottomCopyright a:hover{
+        color: #302f2f;
+    }
+
+
+
+
+
+    .socialNetworksContainer{
+        text-align: center;
+        margin-top: 30px;
+    }
+    .socialNetworksContainer .counterContainer{
+        display: inline-block;
+        margin-top: 10px;
+        position: relative;
+        padding-left: 25px;
+
+    }
+    .socialNetworksContainer .counterContainer .socialIconContainer{
+        position: absolute;
+        left: 0;
+        top: -6px;
+    }
+    .socialNetworksContainer .shareCounter{
+        display: inline-block;
+        background-color: black;
+        border-radius: 3px;
+        /* add in vendor rules */
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+        /* add in vendor rules */
+        font-weight: bold;
+        padding: 3px 10px;
+        position: relative;
+        text-align: center;
+        min-width: 40px;
+        margin-bottom: 0;
+        vertical-align: middle;
+        color: white;
+        top: -7px;
+        margin-right: 15px;
+        margin-left: 5px;
+    }
+    .socialNetworksContainer .shareCounter:before{
+        content: url("img/counterArrow.png");
+        position: absolute;
+        left: -7px;
+        top: 2px;
+    }
+
+
+
+    @-moz-document url-prefix(){
+        .socialNetworksContainer .shareCounter{
+            height: 18px;
+        }
+        .secondHeader .menuItem a{
+            padding-bottom: 22px;
+        }
+
+    }
+
+
+    @media only screen and (max-width: 890px){
+        .bottomSocialNetworksContainer .bottomMenu {
+            text-align: center;
+            margin-top: 25px;
+        }
+        .bottomSocialNetworksContainer .bottomMenu a{
+            margin: 0 30px 25px 0;
+
+        }
+
+    }
+
+
+    @media only screen and (max-width: 767px){
+        .header{
+            text-align: center;
+        }
+        .header .menuItem {
+            text-align: center;
+            padding-top: 0;
+        }
+        .header .headerNavigation .menuItem a{
+            padding-top: 30px;
+        }
+        .header .menuItem .homeMenuItem{
+            top: 18px;
+        }
+        .header .logo{
+            padding-bottom: 0;
+        }
+        .secondHeader ul{
+            text-align: center;
+        }
+        .secondHeader ul.menuItem{
+            padding: 0;
+            margin: 0;
+        }
+        .secondHeader ul li{
+            margin-bottom: -1px;
+            padding: 17px 5px;
+            display: inline-block;
+
+        }
+
+
+        .bottomSocialNetworksContainer .bottomCopyright{
+            text-align: center;
+        }
+        .bottomSocialNetworksContainer .bottomMenu a{
+            margin: 0 15px 25px 15px;
+        }
+
+        
+    }
