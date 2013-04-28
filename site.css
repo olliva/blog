@@ -222,7 +222,6 @@
     }
     .commentsPart .commentContainer{
         margin-top: 20px;
-        overflow: auto;
     }
     .commentsPart .commentContainer .userAvatarContainer{
         float: left;
@@ -362,7 +361,11 @@
     }
 
 
-
+    .clearfix:after{
+        clear: both;
+        content: " ";
+        display: block;
+    }
     @-moz-document url-prefix(){
         .socialNetworksContainer .shareCounter{
             height: 18px;
